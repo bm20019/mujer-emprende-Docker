@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    image: 'emprende-backend:latest'
+    build:
+      context: .
+    container_name: emprendedocker
+    depends_on:
+      - dbEmprende
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dbEmprende:5432/emprende
+      SPRING_DATASOURCE_USERNAME: fedisal
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_JPA_SHOW_SQL: "true"
+    ports:
+      - 8080:8080
+
+  dbEmprende:
+    image: postgres:14
+    container_name: dbEmprende
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: fedisal
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: emprende
+    volumes:
+      - ./init-scripts/:/docker-entrypoint-initdb.d/
