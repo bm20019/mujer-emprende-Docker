@@ -1,11 +1,21 @@
 version: '3.8'
 
 services:
-  app:
+  fronted:
+    image: 'emprende-fronted:latest'
+    build:
+      context: ./FRONT
+    container_name: emprendefronted
+    depends_on:
+      - api
+    ports:
+      - 4200:80
+
+  api:
     image: 'emprende-backend:latest'
     build:
-      context: .
-    container_name: emprendedocker
+      context: ./API
+    container_name: emprendebackend
     depends_on:
       - dbEmprende
     environment:
@@ -17,7 +27,7 @@ services:
       - 8080:8080
 
   dbEmprende:
-    image: postgres:14
+    image: postgres:14-alpine
     container_name: dbEmprende
     ports:
       - 5432:5432
