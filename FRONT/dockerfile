@@ -10,7 +10,7 @@ RUN npm install
 
 COPY emprende/ /app
 
-RUN /app/script.sh
+# RUN /app/script.sh
 
 RUN npm run build --prod
 
