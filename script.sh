@@ -8,3 +8,6 @@ domain="ip${ipR}-${SESSION_ID}-8080.${PWD_HOST_FQDN}"
 sed -i "s/localhost/$domain/g" FRONT/emprende/src/app/components/principal/principal.component.ts
 
 echo "La dirección IP pública del host es: $domain"
+echo =================================================================
+cat FRONT/emprende/src/app/components/principal/principal.component.ts
+echo =================================================================
