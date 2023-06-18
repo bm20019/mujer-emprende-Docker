@@ -1,0 +1,11 @@
+<div>
+    <div class="login">
+        <form class="custom-form" [formGroup]="formulario">
+            <h1>Validar credenciales</h1>
+            <input type="email" formControlName="email" placeholder="Email" required="required" />
+            <input type="password" formControlName="password" placeholder="Contraseña" required="required" />
+            <button type="submit" (click)="login()">Ingresar</button>
+            <button type="submit" class="mt-5" (click)="regresar('comercio')">Comercio</button>
+        </form>
+    </div>
+</div>

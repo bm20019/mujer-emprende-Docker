@@ -1,0 +1,10 @@
+<div class="card text-center mb-3">
+    <img [src]="product.imagen" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title"><strong>{{product.nombre}}</strong></h5>
+        <p class="card-text">{{product.descripcion}}</p>
+        <p class="card-text"><strong style="color: red;">{{simb}} {{product.precio}}</strong></p>
+        <button class="btn btn-outline-primary" (click)="addToCart()">
+            <i class="fas fa-cart-plus"></i> <strong style="color: black;"> Agregar</strong></button>
+    </div>
+</div>

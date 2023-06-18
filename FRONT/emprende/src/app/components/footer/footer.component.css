@@ -1,0 +1,8 @@
+.container {
+    padding: 1rem;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+    background-color: #030301;
+    color: white;
+    display: auto;
+}

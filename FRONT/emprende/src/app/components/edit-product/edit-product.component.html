@@ -1,0 +1,48 @@
+<h2>Editar Producto</h2>
+
+<form [formGroup]="formulario">
+    <div class="p-formgrid p-fluid p-grid">
+        <hr />
+        <div class="clearfix">
+            <p>Datos del Producto</p>
+        </div>
+        <div class="row">
+            <div class="field col-lg-6 col-md-6 col-sx-12">
+                <label for="comercio">Nombre del producto:</label>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-id-card"></i>
+                    <input type="text" pInputText id="nombre" placeholder="Ingrese el nombre del producto" formControlName="nombre" />
+                </span>
+            </div>
+            <div class="field col-lg-6 col-md-6 col-sx-12">
+                <label for="comercio">Descripción:</label>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-user"></i>
+                    <textarea pInputTextarea id="descripcion" placeholder="Ingrese la descripcion del producto" formControlName="descripcion"></textarea>
+                </span>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="field col-lg-6 col-md-6 col-sx-12">
+                <label for="comercio">Imagen del producto:</label>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-id-card"></i>
+                    <input type="text" pInputText id="imagen" placeholder="Ingrese Url del producto" formControlName="imagen" />
+                </span>
+            </div>
+            <div class="field col-lg-6 col-md-6 col-sx-12">
+                <label for="comercio">Precio:</label>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-user"></i>
+                    <p-inputNumber id="precio" mode="decimal" placeholder="Ingrese el precio del producto" locale="en-US" [minFractionDigits]="2" formControlName="precio"> </p-inputNumber>
+                </span>
+            </div>
+        </div>         
+    </div>
+</form>
+
+<div class="buttons">
+  <button pButton label="Guardar" (click)="guardarEdicion()" class="p-button-success"></button>
+  <button pButton label="Cancelar" (click)="ref.close(false)" class="p-button-secondary"></button>
+</div>

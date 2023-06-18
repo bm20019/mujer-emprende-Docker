@@ -1,5 +1,5 @@
 #!/bin/bash
-
+pwd
 # Obtener la dirección IP pública del host
 ip=$(curl -s http://checkip.amazonaws.com)
 

@@ -1,0 +1,91 @@
+<div class="container pt-3">
+    <form [formGroup]="formGroup" class="form-group">
+        <div class="p-formgrid p-fluid p-grid">
+            <hr />
+            <div class="clearfix">
+                <p>Datos del Producto</p>
+            </div>
+            <div class="row">
+                <div class="field col-lg-6 col-md-6 col-sx-12">
+                    <label for="comercio">Nombre del producto:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-id-card"></i>
+                        <input type="text" pInputText id="nombre" placeholder="Ingrese el nombre del producto" formControlName="nombre" />
+                    </span>
+                </div>
+                <div class="field col-lg-6 col-md-6 col-sx-12">
+                    <label for="comercio">Descripción:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-user"></i>
+                        <textarea pInputTextarea id="descripcion" placeholder="Ingrese la descripcion del producto" formControlName="descripcion"></textarea>
+                    </span>
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="field col-lg-6 col-md-6 col-sx-12">
+                    <label for="comercio">Imagen del producto:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-id-card"></i>
+                        <input type="text" pInputText id="imagen" placeholder="Ingrese Url del producto" formControlName="imagen" />
+                    </span>
+                </div>
+                <div class="field col-lg-6 col-md-6 col-sx-12">
+                    <label for="comercio">Precio:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-user"></i>
+                        <p-inputNumber id="precio" mode="decimal" placeholder="Ingrese el precio del producto" locale="en-US" [minFractionDigits]="2" formControlName="precio"> </p-inputNumber>
+                    </span>
+                </div>
+            </div>
+            <div  class="pt-3">
+                <p-button  label="Agregar" id="agregar" (click)="submit();"></p-button>
+            </div>   
+            <button class="btn btn-outline-primary ml-5 mt-5" ngbTooltip="Abandona la opción"
+            (click)="regresar('admon')">
+            <i class="fa fa-long-arrow-left"></i> <strong style="color: black;"> Salir</strong></button>
+        </div>
+    </form>
+    <div class="container pt-3">
+        <p-messages></p-messages>
+        <!-- Resto del contenido del formulario -->
+    </div>
+    <div class="pt-3">
+        <p-table [value]="products" [tableStyle]="{'min-width': '60rem'}">
+            <ng-template pTemplate="caption">
+                <div class="flex align-items-center justify-content-between">
+                    Productos del comercio
+                    <p-button icon="fas fa-refresh" (click)="refresh()"></p-button>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                    <th>Activo</th>
+                    <th>Acciones</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-products>
+                <tr>
+                    <td>{{products.nombre}}</td>
+                    <td>{{products.descripcion}}</td>
+                    <td>{{products.precio | currency:'USD'}}</td>
+                    <td><img [src]="products.imagen" [alt]="products.nombre" width="100" class="shadow-4" /></td>                    
+                    <td>{{ products.activo === 1 ? 'activo' : 'desactivado' }}</td>                   
+                    <td>
+                        <button class="btn btn-outline-primary " (click)="openEditarProductoDialog(products)">Modifica</button>
+                        <button class="btn btn-outline-primary mt-2" (click)="inactivar()">Inactivar</button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="flex align-items-center justify-content-between">
+                    Hay un total de {{products ? products.length : 0 }} productos.
+                </div>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="container pt-3">
+    <form [formGroup]="formGroup" class="form-group">
+        <div class="p-formgrid p-fluid p-grid">
+            <hr />
+            <div class="clearfix">
+                <p>Datos del Usuario</p>
+            </div>
+            <div class="row">
+                <div class="field col-lg-4 col-md-4 col-sx-12">
+                    <label for="usuario">Nombres del usuario:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-id-card"></i>
+                        <input type="text" pInputText id="nombres" placeholder="Ingrese los nombres del usuario" formControlName="nombres" />
+                    </span>
+                </div>
+                <div class="field col-lg-4 col-md-4 col-sx-12">
+                    <label for="usuario">Apellidos del usuario:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-user"></i>
+                        <input type="text" pInputText id="apellidos" placeholder="Ingrese los apellidos del usuario" formControlName="apellidos" />
+                    </span>
+                </div>
+                <div class="field col-lg-4 col-md-4 col-sx-12">
+                    <label for="usuario">Contraseña:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-user"></i>
+                        <input type="password" pInputText id="correo" placeholder="Ingrese la contraseña del usuario" formControlName="correo" />
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field col-lg-4 col-md-4 col-sx-12">
+                    <label for="usuario">Contacto del usuario:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-id-card"></i>
+                        <input type="text" pInputText id="contacto" placeholder="Ingrese un número de telefono" formControlName="contacto" />
+                    </span>
+                </div>
+                <div class="field col-lg-4 col-md-4 col-sx-12">
+                    <label for="usuario">Correo del usuario:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-user"></i>
+                        <input type="email" pInputText id="correo" placeholder="Ingrese el correo del usuario" formControlName="correo" />
+                    </span>
+                </div>
+                <div class="field col-lg-4 col-md-4 col-sx-12">
+                    <label for="comercio">Dirección:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-user"></i>
+                        <textarea pInputTextarea id="direccion" placeholder="Ingrese la dirección del usuario" formControlName="direccion"></textarea>
+                    </span>
+                </div>
+            </div>
+            <div  class="pt-3">
+                <p-button label="Agregar" id="agregar" (click)="submit();"></p-button>
+            </div>  
+            <button class="btn btn-outline-primary ml-5 mt-5" ngbTooltip="Abandona la opción"
+            (click)="regresar('admon')">
+            <i class="fa fa-long-arrow-left"></i> <strong style="color: black;"> Salir</strong></button>         
+        </div>
+    </form>
+</div>

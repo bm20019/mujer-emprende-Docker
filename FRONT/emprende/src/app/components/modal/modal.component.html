@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4>Transacción éxitosa!!!</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="close" (click)="activeModal.dismiss()">
+        <span class="glyphicon glyphicon-remove"></span>
+        <span class="hidden-xs">Cerrar</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <h3>Detalle de la transacción</h3>
+    <hr>
+    <div *ngFor="let item of items">
+        <p><b>Producto: </b>{{item.name}} <b>Unidades: </b>{{item.quantity}} <b>Sub total:</b>{{simb}} {{item.unit_amount.value}} </p>
+    </div>
+    <hr>
+    <h3><b>Total: </b>{{simb}} {{amount}} </h3>
+</div>

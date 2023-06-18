@@ -1,0 +1,7 @@
+.p-messages {
+    position: fixed;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    z-index: 9999;
+  }

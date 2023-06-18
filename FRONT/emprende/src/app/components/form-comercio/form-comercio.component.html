@@ -1,0 +1,42 @@
+<div class="container pt-3">
+    <form [formGroup]="formGroup" class="form-group">
+        <div class="p-formgrid p-fluid p-grid">
+            <hr />
+            <div class="clearfix">
+                <p>Datos del Comercio</p>
+            </div>
+            <div class="row">
+                <div class="field col-lg-4 col-md-4 col-sx-12">
+                    <label for="comercio">Nombre del comercio:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-id-card"></i>
+                        <input type="text" pInputText id="nombre" placeholder="Ingrese el nombre del comercio" formControlName="nombre" />
+                    </span>
+                </div>               
+                <div class="field col-lg-4 col-md-4 col-sx-12">
+                    <label for="comercio">Logo del comercio:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-id-card"></i>
+                        <input type="text" pInputText id="logo" placeholder="Ingrese Url del comercio" formControlName="logo" />
+                    </span>
+                </div>
+                <div class="field col-lg-4 col-md-4 col-sx-12">
+                    <label for="comercio">Descripción:</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-user"></i>
+                        <textarea pInputTextarea id="descripcion" placeholder="Ingrese la descripcion del negocio" formControlName="descripcion"></textarea>
+                    </span>
+                </div>
+            </div>
+            <div  class="pt-3">
+                <p-button label="Agregar" id="agregar" (click)="submit();"></p-button>
+                <br>
+            </div> 
+
+            <button class="btn btn-outline-primary ml-5 mt-5" ngbTooltip="Abandona la opción"
+            (click)="regresar('admon')">
+            <i class="fa fa-long-arrow-left"></i> <strong style="color: black;"> Salir</strong></button>
+
+        </div>
+    </form>
+</div>

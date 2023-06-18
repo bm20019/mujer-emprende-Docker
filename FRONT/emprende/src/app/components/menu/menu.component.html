@@ -1,0 +1,22 @@
+<mat-chip-list aria-label="Catalogos">
+    <mat-chip>
+        <button class="btn btn-outline-primary ml-5 mt-5" ngbTooltip="Ingresa al mantenimiento de comercios"
+            (click)="adminis('formComercio')">
+            <i class="fas fa-university"></i> <strong style="color: black;"> Comercios</strong></button>
+    </mat-chip>
+    <mat-chip color="primary">
+        <button class="btn btn-outline-primary ml-2 mt-5" ngbTooltip="Ingresa al mantenimiento de productos"
+            (click)="adminis('formProducto')">
+            <i class="fas fa-university"></i> <strong style="color: black;"> Productos</strong></button>
+    </mat-chip>
+    <mat-chip color="accent">
+        <button class="btn btn-outline-primary ml-2 mt-5" ngbTooltip="Ingresa al mantenimiento de usuarios"
+            (click)="adminis('formUsuario')">
+            <i class="fas fa-university"></i> <strong style="color: black;"> Usuario</strong></button>
+    </mat-chip>
+    <mat-chip color="accent">
+        <button class="btn btn-outline-primary ml-2 mt-5" ngbTooltip="Ingresa al mantenimiento de ventas"
+            (click)="adminis('comercio')">
+            <i class="fas fa-university"></i> <strong style="color: black;"> Ventas</strong></button>
+    </mat-chip>
+</mat-chip-list>

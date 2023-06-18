@@ -1,0 +1,9 @@
+<div class="card text-center mb-3">
+    <img [src]="comercio.logo" class="card-img-top" alt="imagen">
+    <div class="card-body">
+        <h5 class="card-title"><strong>{{comercio.nombre}}</strong></h5>
+        <p class="card-text">{{comercio.descripcion}}</p>
+        <button class="btn btn-outline-primary" ngbTooltip="Ingresa al emprendimiento elegido" (click)="ingresoComercio('comercio')">
+            <i class="fas fa-university"></i> <strong style="color: black;"> Ingresar</strong></button>
+    </div>
+</div>
