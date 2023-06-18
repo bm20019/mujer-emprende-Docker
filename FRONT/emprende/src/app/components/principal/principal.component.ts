@@ -38,6 +38,6 @@ export class PrincipalComponent implements OnInit {
   }
 
   setearUrlDocker() {
-    this.pasardatosservice.iniciarUrl('http://localhost:8080');
+    this.pasardatosservice.iniciarUrl('http://ip172-19-0-18-ci71odcsnmng00ej6v60-8080.direct.labs.play-with-docker.com:8080');
   }
 }
